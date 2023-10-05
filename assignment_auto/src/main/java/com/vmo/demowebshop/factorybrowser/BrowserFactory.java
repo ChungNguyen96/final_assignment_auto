@@ -1,4 +1,7 @@
 package com.vmo.demowebshop.factorybrowser;
 
-public class BrowserFactory {
+import org.openqa.selenium.WebDriver;
+
+public interface BrowserFactory {
+    public WebDriver getBrowserDriver();
 }
