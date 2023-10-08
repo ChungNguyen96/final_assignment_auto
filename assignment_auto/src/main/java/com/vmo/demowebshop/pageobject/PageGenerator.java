@@ -12,4 +12,13 @@ public class PageGenerator {
     public static HomepageObject getHomepageObject(WebDriver driver){
         return new HomepageObject(driver);
     }
+    public static DigitalDownloadObject getDigitalDownloadObject(WebDriver driver){
+        return new DigitalDownloadObject(driver);
+    }
+    public static ShoppingCartObject getShoppingCartObject(WebDriver driver){
+        return new ShoppingCartObject(driver);
+    }
+    public static CheckoutObject getCheckoutObject(WebDriver driver){
+        return new CheckoutObject(driver);
+    }
 }

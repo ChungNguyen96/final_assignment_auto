@@ -5,10 +5,9 @@ import com.vmo.demowebshop.helper.Log;
 import com.vmo.demowebshop.pageobject.HomepageObject;
 import com.vmo.demowebshop.pageobject.ListBookPageObject;
 import com.vmo.demowebshop.pageobject.PageGenerator;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.annotations.AfterClass;
+
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -50,9 +49,10 @@ public class BuyBookHighestRated extends BaseTest {
         //verifyTrue( listBookPageObject.increaseNumberIncart(beforeQuantity,afterQuantity));
         Log.allure("Verify increase quantity after click the 2nd book");
         listBookPageObject.hoverOnCart();
-  //      System.out.println("Book in cart: " + driver.findElement(By.xpath("(//div[@class='mini-shopping-cart']//div[@class='name']/a)[1]")).getTagName());
         List<String> listBookIncartExpect = listBookPageObject.getListBookInCart();
+        System.out.println(listBookIncartExpect);
         List<String> listBookDisplayIncart = listBookPageObject.getListBookDisplayInCart();
+        System.out.println(listBookDisplayIncart);
         verifyTrue(listBookPageObject.compareListBookDisplayInCart(listBookDisplayIncart,listBookIncartExpect));
     }
 

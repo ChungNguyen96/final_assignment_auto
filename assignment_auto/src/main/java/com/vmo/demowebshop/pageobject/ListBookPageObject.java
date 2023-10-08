@@ -4,6 +4,7 @@ import com.vmo.demowebshop.common.BasePage;
 import com.vmo.demowebshop.common.GlobalConstants;
 import com.vmo.demowebshop.helper.Log;
 import com.vmo.demowebshop.interfaces.ListBookPageUI;
+import com.vmo.demowebshop.interfaces.LoginPageUI;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,7 +31,7 @@ public class ListBookPageObject extends BasePage {
     }
 
     public List<String> getBookByRate(int number) {
-        List<String> listRate = getListBookRated();
+        List<String> listRate = getListRated();
         List<String> listBook = new ArrayList<>();
         for (int i = 0; i < number; i++) {
             listBook.add(getWebElement(driver, ListBookPageUI.BOOK_BY_RATE, listRate.get(i)).getText());
@@ -38,7 +39,7 @@ public class ListBookPageObject extends BasePage {
         return listBook;
     }
 
-    public List<String> getListBookRated() {
+    public List<String> getListRated() {
         List<WebElement> listWebElementRate = getListWebElements(driver, ListBookPageUI.LISTBOOK_RATE);
         List<String> listRate = new ArrayList<>();
         for (WebElement element : listWebElementRate) {
@@ -91,12 +92,16 @@ public class ListBookPageObject extends BasePage {
     }
 
     public List<String> getListBookDisplayInCart() {
+
         List<WebElement> webElementList = getListWebElements(driver, ListBookPageUI.BOOK_NAME_IN_CART);
         List<String> listBookName = new ArrayList<>();
         for (WebElement element : webElementList) {
+            System.out.println(element);
             listBookName.add(element.getText());
             System.out.println("Name" +element.getText());
         }
+
+       // Collections.reverseOrder();
         return listBookName;
     }
 
