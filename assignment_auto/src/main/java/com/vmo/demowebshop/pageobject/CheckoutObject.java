@@ -40,4 +40,8 @@ public class CheckoutObject extends BasePage {
         if (shippingAddress.getAttribute("style").contains("display: none;")) return false;
         else return true;
     }
+
+    public boolean isCheckOnCashDelivery() {
+        return isElementSelected(driver,CheckoutUI.CHECKBOX_CASH_DELIVERY);
+    }
 }

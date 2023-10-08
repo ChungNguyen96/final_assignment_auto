@@ -63,8 +63,9 @@ public class BuyItemSuccessfully extends BaseTest {
         checkoutObject.enterInput("Zip / postal code",dataUtils.getZipCode());
         checkoutObject.selectData("Country","Viet Nam");
         checkoutObject.clickContinue();
-        checkoutObject.isExpandingPaymentMethod();
+        verifyTrue(checkoutObject.isExpandingPaymentMethod());
         Log.allure("Verify expanding payment method.");
+        verifyTrue(checkoutObject.isCheckOnCashDelivery());
 
     }
 }
