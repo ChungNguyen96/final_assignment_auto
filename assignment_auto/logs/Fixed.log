@@ -156,3 +156,125 @@
 [08-10-2023 13:12:41.293 INFO com.vmo.demowebshop.helper.Log] - Enter URL
 [08-10-2023 13:14:02.436 INFO com.vmo.demowebshop.helper.Log] - Enter URL
 [08-10-2023 13:14:58.373 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 13:25:16.311 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 13:25:47.600 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 13:27:09.308 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 13:30:17.384 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 13:33:04.285 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 13:33:35.977 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 13:36:03.915 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 13:44:50.585 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 13:46:48.590 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 13:54:36.943 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 13:55:29.799 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 13:57:41.970 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 13:58:13.304 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 13:58:53.196 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:01:54.651 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 14:03:03.256 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:04:48.339 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 14:05:02.208 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:05:34.129 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 14:06:09.026 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:06:56.275 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 14:07:10.918 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:08:27.699 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 14:08:41.623 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:14:43.876 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:15:15.037 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 14:18:53.363 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:19:24.558 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 14:25:32.965 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:25:40.349 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 14:26:12.625 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:28:00.302 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:28:07.830 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 14:31:15.014 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:31:19.420 INFO com.vmo.demowebshop.helper.Log] - Click book: Fiction
+[08-10-2023 14:31:20.330 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 1st book
+[08-10-2023 14:31:20.401 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
+[08-10-2023 14:31:20.470 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 2nd book
+[08-10-2023 14:31:20.690 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 14:33:20.304 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:33:25.417 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
+[08-10-2023 14:33:25.849 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 1st book
+[08-10-2023 14:33:25.897 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
+[08-10-2023 14:33:26.026 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 2nd book
+[08-10-2023 14:33:26.281 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 14:38:06.641 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:38:11.464 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
+[08-10-2023 14:38:12.369 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 1st book
+[08-10-2023 14:38:12.409 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
+[08-10-2023 14:38:12.487 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 2nd book
+[08-10-2023 14:42:43.173 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:42:47.704 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
+[08-10-2023 14:42:48.602 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 1st book
+[08-10-2023 14:42:48.671 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
+[08-10-2023 14:42:48.769 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 2nd book
+[08-10-2023 14:42:49.114 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 14:43:34.792 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:43:39.262 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
+[08-10-2023 14:43:40.127 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 1st book
+[08-10-2023 14:43:40.207 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
+[08-10-2023 14:43:40.284 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 2nd book
+[08-10-2023 14:44:46.402 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 14:45:58.315 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:46:02.783 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
+[08-10-2023 14:46:03.651 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 1st book
+[08-10-2023 14:46:03.706 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
+[08-10-2023 14:46:03.824 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 2nd book
+[08-10-2023 14:46:04.103 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 14:46:54.236 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:46:58.766 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
+[08-10-2023 14:46:59.639 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 1st book
+[08-10-2023 14:46:59.678 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
+[08-10-2023 14:46:59.776 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 2nd book
+[08-10-2023 14:47:00.001 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 14:51:02.396 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 14:51:06.870 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
+[08-10-2023 14:51:07.712 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 1st book
+[08-10-2023 14:51:07.772 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
+[08-10-2023 14:51:07.887 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 2nd book
+[08-10-2023 14:51:08.162 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 15:03:59.194 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 15:04:03.732 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
+[08-10-2023 15:04:04.587 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 1st book
+[08-10-2023 15:04:04.656 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
+[08-10-2023 15:04:04.749 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 2nd book
+[08-10-2023 15:04:05.066 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 15:04:48.243 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 15:04:52.807 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
+[08-10-2023 15:04:53.629 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 1st book
+[08-10-2023 15:04:53.700 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
+[08-10-2023 15:04:53.832 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 2nd book
+[08-10-2023 15:04:54.161 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 15:05:45.216 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 15:05:49.673 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
+[08-10-2023 15:05:50.545 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 1st book
+[08-10-2023 15:05:50.608 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
+[08-10-2023 15:05:50.730 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 2nd book
+[08-10-2023 15:05:51.105 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 15:09:03.546 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 15:09:08.976 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
+[08-10-2023 15:09:09.404 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 1st book
+[08-10-2023 15:09:09.467 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
+[08-10-2023 15:09:09.539 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 2nd book
+[08-10-2023 15:09:09.876 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 15:11:04.481 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 15:11:09.076 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
+[08-10-2023 15:11:09.924 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 1st book
+[08-10-2023 15:11:09.992 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
+[08-10-2023 15:11:10.115 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 2nd book
+[08-10-2023 15:11:10.404 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 15:11:54.142 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 15:11:58.598 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
+[08-10-2023 15:11:59.478 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 1st book
+[08-10-2023 15:11:59.544 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
+[08-10-2023 15:11:59.610 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 2nd book
+[08-10-2023 15:11:59.865 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[08-10-2023 15:13:40.823 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[08-10-2023 15:13:45.595 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
+[08-10-2023 15:13:46.083 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 1st book
+[08-10-2023 15:13:46.207 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
+[08-10-2023 15:13:46.334 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 2nd book
+[08-10-2023 15:13:46.634 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------

@@ -37,20 +37,20 @@ public class BuyBookHighestRated extends BaseTest {
         listBookPageObject = PageGenerator.getListBookPageObject(driver);
         verifyTrue(listBookPageObject.isDisplayBooksScreen());
         int beforeQuantity = listBookPageObject.getQuantityIncart(); // quantity khi chua add to cart
-       // List<String> listBookHighestRate = listBookPageObject.getTwoBookHigestRate();
         List<String> listBookHighestRate = listBookPageObject.getBookByRate(2);
         listBookPageObject.clickBookHighestRate(1,listBookHighestRate);
         verifyTrue(listBookPageObject.isDisplayMsgAddToCart());
         int afterQuantity = listBookPageObject.getQuantityIncart();
         verifyTrue(listBookPageObject.increaseNumberIncart(beforeQuantity,afterQuantity));
         Log.allure("Verify increase quantity after click the 1st book");
-        beforeQuantity = afterQuantity;
+        beforeQuantity = listBookPageObject.getQuantityIncart();
         listBookPageObject.clickBookHighestRate(2,listBookHighestRate);
         verifyTrue(listBookPageObject.isDisplayMsgAddToCart());
         afterQuantity = listBookPageObject.getQuantityIncart();
         //verifyTrue( listBookPageObject.increaseNumberIncart(beforeQuantity,afterQuantity));
         Log.allure("Verify increase quantity after click the 2nd book");
         listBookPageObject.hoverOnCart();
+  //      System.out.println("Book in cart: " + driver.findElement(By.xpath("(//div[@class='mini-shopping-cart']//div[@class='name']/a)[1]")).getTagName());
         List<String> listBookIncartExpect = listBookPageObject.getListBookInCart();
         List<String> listBookDisplayIncart = listBookPageObject.getListBookDisplayInCart();
         verifyTrue(listBookPageObject.compareListBookDisplayInCart(listBookDisplayIncart,listBookIncartExpect));
