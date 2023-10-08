@@ -1,0 +1,5 @@
+[07-10-2023 22:24:15.489 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[07-10-2023 22:25:46.901 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
+[07-10-2023 22:25:47.762 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity after click the 1st book
+[07-10-2023 22:25:47.802 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
+[07-10-2023 22:25:47.854 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------

@@ -1,23 +1,39 @@
 package com.vmo.demowebshop.helper;
 
+import com.vmo.demowebshop.common.BaseTest;
+import io.qameta.allure.Attachment;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+
 public class TestNGListener implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
-        ITestListener.super.onTestStart(result);
+        System.out.println("-----------Test start");
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        ITestListener.super.onTestSuccess(result);
+        System.out.println("--------Test success");
+  //      Object testClass = result.getInstance();
+//        WebDriver webDriver = ((BaseTest) testClass).getDriver();
+//        saveScreenShot(webDriver);
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        ITestListener.super.onTestFailure(result);
+        Log.info("---------- " + result.getName() + " FAILED test ----------");
+//        Object testClass = result.getInstance();
+//        WebDriver webDriver = ((BaseTest) testClass).getDriver();
+//        saveScreenShot(webDriver);
+    }
+    @Attachment()
+    public  static byte[] saveScreenShot(WebDriver driver){
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 
     @Override
@@ -26,22 +42,12 @@ public class TestNGListener implements ITestListener {
     }
 
     @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-        ITestListener.super.onTestFailedButWithinSuccessPercentage(result);
-    }
-
-    @Override
-    public void onTestFailedWithTimeout(ITestResult result) {
-        ITestListener.super.onTestFailedWithTimeout(result);
-    }
-
-    @Override
-    public void onStart(ITestContext context) {
-        ITestListener.super.onStart(context);
+    public void onStart(ITestContext context) { // khi chajy thi vao day dau tien
+        System.out.println("-----Start");
     }
 
     @Override
     public void onFinish(ITestContext context) {
-        ITestListener.super.onFinish(context);
+        System.out.println("-------Finish");
     }
 }

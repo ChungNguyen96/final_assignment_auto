@@ -1,0 +1,3 @@
+[07-10-2023 21:20:21.740 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[07-10-2023 21:20:46.369 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[07-10-2023 21:20:46.688 INFO com.vmo.demowebshop.helper.Log] - Close driver

@@ -1,0 +1,4 @@
+[07-10-2023 20:49:35.178 INFO com.vmo.demowebshop.helper.Log] - Enter URL
+[07-10-2023 20:51:06.794 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
+[07-10-2023 20:51:06.821 INFO com.vmo.demowebshop.helper.Log] - ---------- TC02_BuyBookHighestRated FAILED test ----------
+[07-10-2023 20:51:07.339 INFO com.vmo.demowebshop.helper.Log] - Close driver

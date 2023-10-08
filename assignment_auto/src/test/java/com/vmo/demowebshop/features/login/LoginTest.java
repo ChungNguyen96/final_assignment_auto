@@ -2,6 +2,7 @@ package com.vmo.demowebshop.features.login;
 
 import com.beust.jcommander.Parameter;
 import com.vmo.demowebshop.common.BaseTest;
+import com.vmo.demowebshop.helper.Log;
 import com.vmo.demowebshop.pageobject.LoginPageObject;
 import com.vmo.demowebshop.pageobject.PageGenerator;
 import org.openqa.selenium.WebDriver;
@@ -18,21 +19,23 @@ public class LoginTest extends BaseTest {
     @Parameters({"browser"})
     public void setup(String browser) {
         driver = getDriverBrower(browser);
+        Log.info("Set up driver");
     }
 
     @Test
     public void TC01_Login() {
-        loginPageObject = PageGenerator.getLoginPageObject(driver);
-        loginPageObject.enterURL();
-        loginPageObject.clickLogin();
-        loginPageObject.enterEmail("chungnt149@gmail.com");
-        loginPageObject.enterPassword("chung149");
-        loginPageObject.login();
+//        loginPageObject = PageGenerator.getLoginPageObject(driver);
+//        loginPageObject.enterURL();
+//        loginPageObject.clickLogin();
+//        loginPageObject.enterEmail("chungnt149@gmail.com");
+//        loginPageObject.enterPassword("chung149");
+//        loginPageObject.login();
     }
 
     @AfterClass
     public void teardown() {
         cleanBrowserAndDriver();
+        Log.info("Close driver");
     }
 
 

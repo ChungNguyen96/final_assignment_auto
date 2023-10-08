@@ -8,11 +8,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Platform;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
+
 public class ExcelUtils {
-    public static final String testDataExcelFileName = "Testdata.xlsx"; //Global test data excel file
+    public static final String testDataExcelFileName = "assignment.xlsx"; //Global test data excel file
     public static final String currentDir = System.getProperty("user.dir");  //Main Directory of the project
     public static String testDataExcelPath = null; //Location of Test data excel file
     private static XSSFWorkbook excelWBook; //Excel WorkBook
@@ -21,7 +22,9 @@ public class ExcelUtils {
     private static XSSFRow row; //Excel row
 
 
+
     public static void setExcelFileSheet(String sheetName) throws IOException {
+
         //MAC or Windows Selection for excel path
         if (Platform.getCurrent().toString().toUpperCase().equalsIgnoreCase("MAC")) {
             testDataExcelPath = currentDir + "/src/test/resources/";
@@ -49,16 +52,14 @@ public class ExcelUtils {
     }
 
     public static int getNumRow() {
-        excelWSheet = excelWBook.getSheetAt(0);
         return excelWSheet.getLastRowNum();
     }
 
     public static int getColNum() {
-        excelWSheet = excelWBook.getSheetAt(0);
         return excelWSheet.getRow(0).getLastCellNum();
     }
 
-    public static Object[][] getData() {
+    public static Object[][] getDataFromFile() {
         int rowNum = getNumRow();
         int colNum = getColNum();
         System.out.println("total row: " + rowNum);
@@ -67,8 +68,8 @@ public class ExcelUtils {
         int currentRow = 0;
         for (int i = 0; i < rowNum; i++) {
             for (int j = 0; j < colNum; j++) {
-                //  System.out.println("data excel at [" + i + "," + j + "] is " + getCellData(i, j));
-                obj[currentRow][j] = getCellData(i + 1, j + 1);
+
+                obj[currentRow][j] = getCellData(i+1, j );
             }
             currentRow++;
         }
