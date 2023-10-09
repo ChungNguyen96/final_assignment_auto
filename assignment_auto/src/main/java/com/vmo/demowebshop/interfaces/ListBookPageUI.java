@@ -8,9 +8,10 @@ public class ListBookPageUI {
     public static final String BOOK_BY_RATE = "//div[@class='rating']/div[contains(@style,'%s')]/ancestor::div[@class='details']//a";
     //div[@class='rating']/div[contains(@style,'59')]/ancestor::div[@class='details']//a
     public static final String BTN_ADD_TO_CART_BY_RATE = "//div[@class='rating']/div[contains(@style,'%s')]/ancestor::div[@class='details']//input";
-    public static final String CART = "//span[@class='cart-label' and text()='Shopping cart']";
+    //public static final String CART = "//span[@class='cart-label' and text()='Shopping cart']";
+    public static final String CART = "//div[@class='header']//a[@class='ico-cart']";
     public static final String CART_QUANTITY = "//span[@class='cart-qty']";
-    public static final String BOOK_NAME_IN_CART = "//div[@id ='flyout-cart']//div[@class='name']/a";
-   // public static final String BOOK_NAME_IN_CART = "//div[@class ='flyout-cart active']//div[@class='name']/a";
+  //  public static final String BOOK_NAME_IN_CART = "//div[@id ='flyout-cart']//div[@class='name']/a";
+    public static final String BOOK_NAME_IN_CART = "//div[@class ='flyout-cart active']//div[@class='name']/a";
 
 }

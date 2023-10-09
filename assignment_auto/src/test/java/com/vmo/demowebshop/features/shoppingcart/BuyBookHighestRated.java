@@ -8,6 +8,7 @@ import com.vmo.demowebshop.pageobject.PageGenerator;
 
 import org.openqa.selenium.WebDriver;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -35,31 +36,28 @@ public class BuyBookHighestRated extends BaseTest {
         homepageObject.clickBookTag();
         listBookPageObject = PageGenerator.getListBookPageObject(driver);
         verifyTrue(listBookPageObject.isDisplayBooksScreen());
-        int beforeQuantity = listBookPageObject.getQuantityIncart(); // quantity khi chua add to cart
+        listBookPageObject.setQuantity();
         List<String> listBookHighestRate = listBookPageObject.getBookByRate(2);
-        listBookPageObject.clickBookHighestRate(1,listBookHighestRate);
-        verifyTrue(listBookPageObject.isDisplayMsgAddToCart());
-        int afterQuantity = listBookPageObject.getQuantityIncart();
-        verifyTrue(listBookPageObject.increaseNumberIncart(beforeQuantity,afterQuantity));
-        Log.allure("Verify increase quantity after click the 1st book");
-        beforeQuantity = listBookPageObject.getQuantityIncart();
-        listBookPageObject.clickBookHighestRate(2,listBookHighestRate);
-        verifyTrue(listBookPageObject.isDisplayMsgAddToCart());
-        afterQuantity = listBookPageObject.getQuantityIncart();
-        //verifyTrue( listBookPageObject.increaseNumberIncart(beforeQuantity,afterQuantity));
-        Log.allure("Verify increase quantity after click the 2nd book");
+
+        for (int i = 0; i < listBookHighestRate.size(); i++) {
+            listBookPageObject.clickBookHighestRate(i, listBookHighestRate);
+            Log.allure("Verify increase quantity after click the book %s",String.valueOf(i));
+            verifyTrue(listBookPageObject.isDisplayMsgAddToCart());
+            System.out.println(listBookPageObject.getQuantity());
+            verifyTrue(listBookPageObject.verifyQuantity(listBookPageObject.getQuantityIncart()));
+        }
         listBookPageObject.hoverOnCart();
         List<String> listBookIncartExpect = listBookPageObject.getListBookInCart();
         System.out.println(listBookIncartExpect);
         List<String> listBookDisplayIncart = listBookPageObject.getListBookDisplayInCart();
         System.out.println(listBookDisplayIncart);
-        verifyTrue(listBookPageObject.compareListBookDisplayInCart(listBookDisplayIncart,listBookIncartExpect));
+        verifyTrue(listBookPageObject.compareListBookDisplayInCart(listBookDisplayIncart, listBookIncartExpect));
     }
 
 
-//    @AfterClass
-//    public void teardown() {
-//        cleanBrowserAndDriver();
-//        Log.info("Close driver");
-//    }
+    @AfterClass
+    public void teardown() {
+        cleanBrowserAndDriver();
+        Log.info("Close driver");
+    }
 }

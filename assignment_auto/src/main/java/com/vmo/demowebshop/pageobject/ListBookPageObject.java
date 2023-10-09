@@ -4,10 +4,11 @@ import com.vmo.demowebshop.common.BasePage;
 import com.vmo.demowebshop.common.GlobalConstants;
 import com.vmo.demowebshop.helper.Log;
 import com.vmo.demowebshop.interfaces.ListBookPageUI;
-import com.vmo.demowebshop.interfaces.LoginPageUI;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.*;
 
@@ -23,6 +24,10 @@ public class ListBookPageObject extends BasePage {
     public ListBookPageObject(WebDriver driver) {
         this.driver = driver;
 
+    }
+
+    public int getQuantity() {
+        return quantity;
     }
 
     public boolean isDisplayBooksScreen() {
@@ -49,7 +54,7 @@ public class ListBookPageObject extends BasePage {
                 listRate.add(rate);
             }
         }
-        Collections.sort(listRate,Collections.reverseOrder());
+        Collections.sort(listRate, Collections.reverseOrder());
         return listRate;
     }
 
@@ -64,9 +69,10 @@ public class ListBookPageObject extends BasePage {
     }
 
     public void clickBookHighestRate(int index, List<String> list) {
-        clickToElement(driver, ListBookPageUI.BTN_ADD_TO_CART, list.get(index - 1));
-        Log.allure("Click book: %s", list.get(index - 1));
-        listBookInCart.add(list.get(index - 1));
+        clickToElement(driver, ListBookPageUI.BTN_ADD_TO_CART, list.get(index));
+        Log.allure("Click book: %s", list.get(index));
+        listBookInCart.add(list.get(index));
+        quantity++;
     }
 
     public boolean isDisplayMsgAddToCart() {
@@ -75,37 +81,53 @@ public class ListBookPageObject extends BasePage {
     }
 
     public void hoverOnCart() {
+        waitForElementVisible(driver, ListBookPageUI.CART);
         hoverMouseToElement(driver, ListBookPageUI.CART);
+//        Actions actions= new Actions(driver);
+//        WebElement element = getWebElement(driver,ListBookPageUI.CART);
+//        actions.moveToElement(element).perform();
+        sleepInSecond(5);
+
     }
 
     public int getQuantityIncart() {
-        overrideImplicitTimeOut(driver, GlobalConstants.LONG_TIMEOUT);
+        sleepInSecond(5);
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, ListBookPageUI.CART_QUANTITY));
+        js.executeScript("arguments[0].scrollIntoView(false);", getWebElement(driver, ListBookPageUI.CART_QUANTITY));
+        waitForElementVisible(driver, ListBookPageUI.CART_QUANTITY);
         String quantity = getWebElement(driver, ListBookPageUI.CART_QUANTITY).getText();
-        return Integer.parseInt(quantity.substring(quantity.indexOf("(") + 1, quantity.indexOf(")")));
+        int q = Integer.parseInt(quantity.substring(quantity.indexOf("(") + 1, quantity.indexOf(")")));
+        System.out.println("quantity: " + q);
+        return q;
     }
 
-    public boolean increaseNumberIncart(int before, int after) {
-        if (after == (before + 1)) return true;
+    public boolean verifyQuantity(int quantityIncart) {
+        if (quantity == quantityIncart) return true;
         else return false;
     }
 
-    public List<String> getListBookDisplayInCart() {
 
+    public List<String> getListBookDisplayInCart() {
+        waitForElementVisible(driver, ListBookPageUI.BOOK_NAME_IN_CART);
         List<WebElement> webElementList = getListWebElements(driver, ListBookPageUI.BOOK_NAME_IN_CART);
         List<String> listBookName = new ArrayList<>();
         for (WebElement element : webElementList) {
             System.out.println(element);
             listBookName.add(element.getText());
-            System.out.println("Name" +element.getText());
+            System.out.println("Name:" + element.getText());
         }
 
-       // Collections.reverseOrder();
+        Collections.reverse(listBookName);
         return listBookName;
     }
 
     public boolean compareListBookDisplayInCart(List<String> listExpect, List<String> listActual) {
         return listExpect.equals(listActual);
     }
+
+    public void setQuantity() {
+        String quantityElement = getWebElement(driver, ListBookPageUI.CART_QUANTITY).getText();
+        this.quantity = Integer.parseInt(quantityElement.substring(quantityElement.indexOf("(") + 1, quantityElement.indexOf(")")));
+    }
+
 }
