@@ -37,9 +37,10 @@ public class BuyBookHighestRated extends BaseTest {
         homepageObject.clickBookTag();
         listBookPageObject = PageGenerator.getListBookPageObject(driver);
         verifyTrue(listBookPageObject.isDisplayBooksScreen());
+        Log.allure("Verify display list book.");
         listBookPageObject.setQuantity();
+        Log.allure("Quantity in cart: %s ",String.valueOf(listBookPageObject.getQuantity()));
         List<String> listBookHighestRate = listBookPageObject.getBookByRate(2);
-
         for (int i = 0; i < listBookHighestRate.size(); i++) {
             listBookPageObject.clickBookHighestRate(i, listBookHighestRate);
             verifyTrue(listBookPageObject.isDisplayMsgAddToCart());
@@ -52,6 +53,7 @@ public class BuyBookHighestRated extends BaseTest {
         List<String> listBookIncartExpect = listBookPageObject.getListBookInCart();
         List<String> listBookDisplayIncart = listBookPageObject.getListBookDisplayInCart();
         verifyTrue(listBookPageObject.compareListBookDisplayInCart(listBookDisplayIncart, listBookIncartExpect));
+        Log.allure("Verify added item is display in cart.");
     }
 
 

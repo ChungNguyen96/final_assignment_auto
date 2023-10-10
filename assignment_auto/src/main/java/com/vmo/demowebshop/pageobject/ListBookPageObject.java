@@ -80,22 +80,20 @@ public class ListBookPageObject extends BasePage {
         waitForElementVisible(driver, ListBookPageUI.BAR_NOTIFICATION);
         return isElementDisplay(driver, ListBookPageUI.BAR_NOTIFICATION);
     }
-    public  void clickCloseBarNotification(){
+
+    public void clickCloseBarNotification() {
         waitForElementVisible(driver, HomepageUI.BAR_NOTIFICATION);
-        clickToElement(driver,HomepageUI.BAR_NOTIFICATION);
+        clickToElement(driver, HomepageUI.BAR_NOTIFICATION);
 
     }
 
     public void hoverOnCart() {
         waitForElementVisible(driver, ListBookPageUI.CART);
         hoverMouseToElement(driver, ListBookPageUI.CART);
-
+        Log.allure("Hover on cart.");
     }
 
     public int getQuantityIncart() {
-
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(false);", getWebElement(driver, ListBookPageUI.CART_QUANTITY));
         waitForElementVisible(driver, ListBookPageUI.CART_QUANTITY);
         String quantity = getWebElement(driver, ListBookPageUI.CART_QUANTITY).getText();
         return Integer.parseInt(quantity.substring(quantity.indexOf("(") + 1, quantity.indexOf(")")));
@@ -127,6 +125,7 @@ public class ListBookPageObject extends BasePage {
     public void setQuantity() {
         String quantityElement = getWebElement(driver, ListBookPageUI.CART_QUANTITY).getText();
         this.quantity = Integer.parseInt(quantityElement.substring(quantityElement.indexOf("(") + 1, quantityElement.indexOf(")")));
+
     }
 
 }

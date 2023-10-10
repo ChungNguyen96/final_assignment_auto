@@ -20,34 +20,35 @@ public class LoginFromFileTest extends BaseTest {
     @Parameters({"browser"})
     public void setup(String browser) throws IOException {
         driver = getDriverBrower(browser);
-        Log.info("Read file");
+        Log.allure("Read data from file.");
         ExcelUtils.setExcelFileSheet("Test data (2)");
     }
-
-
 
     @Test(dataProvider = "readFile")
     public void TC01_Login(String index,String username, String password, String expected) {
         homepageObject = PageGenerator.getHomepageObject(driver);
         homepageObject.enterURL();
         verifyTrue(homepageObject.isCorrectHomepage());
+        Log.allure("Verified display homepage.");
         homepageObject.clickLogin();
         loginPageObject = PageGenerator.getLoginPageObject(driver);
+        verifyTrue(loginPageObject.isDisplayLogin());
+        Log.allure("Verified display login page.");
         loginPageObject.enterEmail(username);
         loginPageObject.enterPassword(password);
         loginPageObject.login();
         verifyTrue(loginPageObject.verifyLogin(username,expected));
+        Log.allure("Verified login.");
     }
     @DataProvider(name = "readFile")
     public Object[][] getDataFromFile() {
-        Log.info("Read data");
         return ExcelUtils.getDataFromFile();
 
     }
     @AfterClass
     public void teardown() {
         cleanBrowserAndDriver();
-        Log.info("Close driver");
+        Log.allure("Close driver");
     }
 
 }

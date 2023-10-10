@@ -53,33 +53,24 @@ public class HomepageObject extends BasePage {
     }
 
     public int getQuantityDisplayIncart() {
-      //  sleepInSecond(5);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, ListBookPageUI.CART_QUANTITY));
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, ListBookPageUI.CART_QUANTITY));
+        waitForElementVisible(driver,ListBookPageUI.CART_QUANTITY);
         String quantity = getWebElement(driver, ListBookPageUI.CART_QUANTITY).getText();
         return Integer.parseInt(quantity.substring(quantity.indexOf("(") + 1, quantity.indexOf(")")));
     }
 
-    public List<WebElement> getListItem() {
-        return getListWebElements(driver, HomepageUI.BTN_ADD_TO_CART);
-    }
 
     public void clickItemToCart() {
         clickToElement(driver, HomepageUI.BTN_ADD_TO_CART);
+        Log.allure("Click add item to cart.");
         quantity++;
     }
     public boolean isDisplayMsgAddToCart() {
         waitForElementVisible(driver, ListBookPageUI.BAR_NOTIFICATION);
         return isElementDisplay(driver, ListBookPageUI.BAR_NOTIFICATION);
     }
-    public int getQuantityIncart() {
-        sleepInSecond(5);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(false);", getWebElement(driver, ListBookPageUI.CART_QUANTITY));
-        waitForElementVisible(driver, ListBookPageUI.CART_QUANTITY);
-        String quantity = getWebElement(driver, ListBookPageUI.CART_QUANTITY).getText();
-        return Integer.parseInt(quantity.substring(quantity.indexOf("(") + 1, quantity.indexOf(")")));
-    }
+
 
     public int getQuantity() {
         return quantity;

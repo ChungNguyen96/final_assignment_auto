@@ -38,11 +38,16 @@ public class LoginPageObject extends BasePage {
         } else if (!email.isEmpty() && !email.contains("@") ) {
             return isElementDisplay(driver, LoginPageUI.MSG_VALIDATE_EMAIL);
         } else {
-            String msgActual = getWebElement(driver, LoginPageUI.MSG_LOGIN_UNSUCCESSFULL).getText();
+            String msgActual = getWebElement(driver, LoginPageUI.MSG_LOGIN_UNSUCCESSFUL).getText();
             if (expected.equals(msgActual)) return true;
             else return false;
         }
 
+    }
+
+    public boolean isDisplayLogin() {
+        waitForElementVisible(driver,LoginPageUI.LOGIN_PAGE);
+        return isElementDisplay(driver,LoginPageUI.LOGIN_PAGE);
     }
 }
 

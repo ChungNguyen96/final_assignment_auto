@@ -18,7 +18,7 @@ public class BuyItemSuccessfully extends BaseTest {
     private ShoppingCartObject shoppingCartObject;
     private CheckoutObject checkoutObject;
     private CheckoutCompleteObject checkoutCompleteObject;
-    private DataUtils dataUtils;
+
     private Customer customer;
     @BeforeClass
     @Parameters({"browser"})
@@ -34,14 +34,16 @@ public class BuyItemSuccessfully extends BaseTest {
         digitalDownloadObject =PageGenerator.getDigitalDownloadObject(driver);
         verifyTrue(digitalDownloadObject.verifyDigitalDownloadScreen());
         Log.allure("Verify display digital download screen.");
+        digitalDownloadObject.setQuantity();
         digitalDownloadObject.clickItemToCart();
         verifyTrue(digitalDownloadObject.isDisplayMsgAddToCart());
+        verifyTrue(digitalDownloadObject.verifyQuantity(digitalDownloadObject.getQuantityIncart()));
         //Step 4: Click shopping cart
         digitalDownloadObject.clickShoppingCart();
         shoppingCartObject = PageGenerator.getShoppingCartObject(driver);
         verifyTrue(shoppingCartObject.isShoppingCartScreen());
         Log.allure("Verify display shopping cart screen.");
-       // shoppingCartObject.selectCountry("Viet Nam");
+
         shoppingCartObject.clickTermService();
         verifyTrue(shoppingCartObject.isClickedTermService());
         shoppingCartObject.clickCheckOut();
@@ -52,7 +54,6 @@ public class BuyItemSuccessfully extends BaseTest {
         verifyTrue(checkoutObject.isDisplayScreen());
         Log.allure("Verify display checkout screen.");
         Log.allure("Fill billing address.");
-        dataUtils = new DataUtils();
         customer = new Customer("Viet Nam");
         checkoutObject.enterInput("First name", customer.getFirstName());
         checkoutObject.enterInput("Last name",customer.getLastName());
@@ -91,7 +92,6 @@ public class BuyItemSuccessfully extends BaseTest {
         verifyTrue(checkoutObject.isCorrectCountry(customer.getCountry()));
 
         verifyTrue(checkoutObject.isCorrectPaymentMethod());
-
         verifyTrue(checkoutObject.isCorrectTotalAmount());
         Log.allure("Verified total amount.");
         checkoutObject.clickConfirm();
