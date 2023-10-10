@@ -33,6 +33,7 @@ public class BuyBookHighestRated extends BaseTest {
         homepageObject = PageGenerator.getHomepageObject(driver);
         homepageObject.enterURL();
         verifyTrue(homepageObject.isCorrectHomepage());
+        Log.allure("Verify display homepage.");
         homepageObject.clickBookTag();
         listBookPageObject = PageGenerator.getListBookPageObject(driver);
         verifyTrue(listBookPageObject.isDisplayBooksScreen());
@@ -41,16 +42,15 @@ public class BuyBookHighestRated extends BaseTest {
 
         for (int i = 0; i < listBookHighestRate.size(); i++) {
             listBookPageObject.clickBookHighestRate(i, listBookHighestRate);
-            Log.allure("Verify increase quantity after click the book %s",String.valueOf(i));
             verifyTrue(listBookPageObject.isDisplayMsgAddToCart());
-            System.out.println(listBookPageObject.getQuantity());
+            Log.allure("Verify display message add to cart successfully.");
+            listBookPageObject.clickCloseBarNotification();
             verifyTrue(listBookPageObject.verifyQuantity(listBookPageObject.getQuantityIncart()));
+            Log.allure("Verify increase quantity after click the book %s",String.valueOf(i));
         }
         listBookPageObject.hoverOnCart();
         List<String> listBookIncartExpect = listBookPageObject.getListBookInCart();
-        System.out.println(listBookIncartExpect);
         List<String> listBookDisplayIncart = listBookPageObject.getListBookDisplayInCart();
-        System.out.println(listBookDisplayIncart);
         verifyTrue(listBookPageObject.compareListBookDisplayInCart(listBookDisplayIncart, listBookIncartExpect));
     }
 

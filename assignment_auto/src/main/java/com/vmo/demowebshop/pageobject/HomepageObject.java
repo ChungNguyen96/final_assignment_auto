@@ -49,10 +49,11 @@ public class HomepageObject extends BasePage {
 
     public void clickBookTag() {
         clickToElement(driver, HomepageUI.BOOK_MENU);
+        Log.allure("Click menu: Book.");
     }
 
     public int getQuantityDisplayIncart() {
-        overrideImplicitTimeOut(driver, GlobalConstants.LONG_TIMEOUT);
+      //  sleepInSecond(5);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, ListBookPageUI.CART_QUANTITY));
         String quantity = getWebElement(driver, ListBookPageUI.CART_QUANTITY).getText();
@@ -63,9 +64,21 @@ public class HomepageObject extends BasePage {
         return getListWebElements(driver, HomepageUI.BTN_ADD_TO_CART);
     }
 
-    public void clickItemToCart(int i) {
-        clickToElement(driver, HomepageUI.BTN_ADD_TO_CART, String.valueOf(i+1));
+    public void clickItemToCart() {
+        clickToElement(driver, HomepageUI.BTN_ADD_TO_CART);
         quantity++;
+    }
+    public boolean isDisplayMsgAddToCart() {
+        waitForElementVisible(driver, ListBookPageUI.BAR_NOTIFICATION);
+        return isElementDisplay(driver, ListBookPageUI.BAR_NOTIFICATION);
+    }
+    public int getQuantityIncart() {
+        sleepInSecond(5);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(false);", getWebElement(driver, ListBookPageUI.CART_QUANTITY));
+        waitForElementVisible(driver, ListBookPageUI.CART_QUANTITY);
+        String quantity = getWebElement(driver, ListBookPageUI.CART_QUANTITY).getText();
+        return Integer.parseInt(quantity.substring(quantity.indexOf("(") + 1, quantity.indexOf(")")));
     }
 
     public int getQuantity() {
@@ -76,10 +89,19 @@ public class HomepageObject extends BasePage {
         if (quantity == quantityIncart)return  true;
         else  return false;
     }
+    public  void clickCloseBarNotification(){
+        waitForElementVisible(driver,HomepageUI.BAR_NOTIFICATION);
+        clickToElement(driver,HomepageUI.BAR_NOTIFICATION);
+
+    }
 
     public void clickMenuDigitalDownload() {
         clickToElement(driver,HomepageUI.MENU_DIGITAL_DOWNLOAD);
     }
 
 
+    public void clickToShoppingCart() {
+        waitForElementClickable(driver,ListBookPageUI.CART);
+        clickToElement(driver,ListBookPageUI.CART);
+    }
 }

@@ -8,4 +8,6 @@ public class ShoppingCartUI {
     public static String BTN_CHECKOUT = "//button[@id='checkout']";
     public static String TITLE_CHECKOUT_AS_GUEST = "//strong[text()='Checkout as a guest or register']";
     public static String BTN_CHECKOUT_AS_GUEST = "//input[contains(@class,'checkout-as-guest-button')]";
+    public static String INPUT_QUANTITY ="//a[text()='14.1-inch Laptop']/ancestor::tr//input[@class='qty-input']";
+
 }

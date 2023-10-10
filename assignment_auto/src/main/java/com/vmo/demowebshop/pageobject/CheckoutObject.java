@@ -39,7 +39,6 @@ public class CheckoutObject extends BasePage {
     public boolean isExpanding(String section) {
         waitForElementVisible(driver, CheckoutUI.SECTION_DYNAMIC, section);
         WebElement style = getWebElement(driver, CheckoutUI.SECTION_DYNAMIC, section);
-        System.out.println(style.getAttribute("style"));
         if (style.getAttribute("style").contains("display: none;")) return false;
         else return true;
     }

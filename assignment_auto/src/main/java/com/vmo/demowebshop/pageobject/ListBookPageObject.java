@@ -3,6 +3,7 @@ package com.vmo.demowebshop.pageobject;
 import com.vmo.demowebshop.common.BasePage;
 import com.vmo.demowebshop.common.GlobalConstants;
 import com.vmo.demowebshop.helper.Log;
+import com.vmo.demowebshop.interfaces.HomepageUI;
 import com.vmo.demowebshop.interfaces.ListBookPageUI;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -79,26 +80,25 @@ public class ListBookPageObject extends BasePage {
         waitForElementVisible(driver, ListBookPageUI.BAR_NOTIFICATION);
         return isElementDisplay(driver, ListBookPageUI.BAR_NOTIFICATION);
     }
+    public  void clickCloseBarNotification(){
+        waitForElementVisible(driver, HomepageUI.BAR_NOTIFICATION);
+        clickToElement(driver,HomepageUI.BAR_NOTIFICATION);
+
+    }
 
     public void hoverOnCart() {
         waitForElementVisible(driver, ListBookPageUI.CART);
         hoverMouseToElement(driver, ListBookPageUI.CART);
-//        Actions actions= new Actions(driver);
-//        WebElement element = getWebElement(driver,ListBookPageUI.CART);
-//        actions.moveToElement(element).perform();
-        sleepInSecond(5);
 
     }
 
     public int getQuantityIncart() {
-        sleepInSecond(5);
+
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(false);", getWebElement(driver, ListBookPageUI.CART_QUANTITY));
         waitForElementVisible(driver, ListBookPageUI.CART_QUANTITY);
         String quantity = getWebElement(driver, ListBookPageUI.CART_QUANTITY).getText();
-        int q = Integer.parseInt(quantity.substring(quantity.indexOf("(") + 1, quantity.indexOf(")")));
-        System.out.println("quantity: " + q);
-        return q;
+        return Integer.parseInt(quantity.substring(quantity.indexOf("(") + 1, quantity.indexOf(")")));
     }
 
     public boolean verifyQuantity(int quantityIncart) {
@@ -114,7 +114,6 @@ public class ListBookPageObject extends BasePage {
         for (WebElement element : webElementList) {
             System.out.println(element);
             listBookName.add(element.getText());
-            System.out.println("Name:" + element.getText());
         }
 
         Collections.reverse(listBookName);

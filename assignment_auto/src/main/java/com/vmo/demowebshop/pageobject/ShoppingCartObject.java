@@ -41,4 +41,11 @@ public class ShoppingCartObject extends BasePage {
     public void clickCheckoutAsGuest() {
         clickToElement(driver,ShoppingCartUI.BTN_CHECKOUT_AS_GUEST);
     }
+
+    public void decreaseQuantity() {
+
+        int originalQuantity = Integer.valueOf(getWebElement(driver,ShoppingCartUI.INPUT_QUANTITY).getAttribute("value"));
+        System.out.println(originalQuantity);
+        sendKeyToElement(driver,ShoppingCartUI.INPUT_QUANTITY,String.valueOf(originalQuantity-1));
+    }
 }

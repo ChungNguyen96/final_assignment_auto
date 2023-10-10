@@ -24,4 +24,7 @@ public class PageGenerator {
     public static CheckoutCompleteObject getCheckoutObjectComplete(WebDriver driver){
         return new CheckoutCompleteObject(driver);
     }
+    public static ProductDetailObject getProductDetailObject(WebDriver driver){
+        return new ProductDetailObject(driver);
+    }
 }

@@ -4,7 +4,7 @@
     <parameter name="browser" value="Chrome"></parameter>
     <test name="Authen">
         <classes>
-<!--           // <class name="com.vmo.demowebshop.features.login.LoginFromFileTest"></class>-->
+<!--            <class name="com.vmo.demowebshop.features.login.LoginFromFileTest"></class>-->
             <class name="com.vmo.demowebshop.features.shoppingcart.BuyBookHighestRated"></class>
 <!--            <class name="com.vmo.demowebshop.features.shoppingcart.RemoveItemOutOfCart"></class>-->
 <!--            <class name="com.vmo.demowebshop.features.shoppingcart.BuyItemSuccessfully"></class>-->

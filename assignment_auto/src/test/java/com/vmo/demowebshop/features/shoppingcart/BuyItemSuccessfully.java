@@ -6,6 +6,7 @@ import com.vmo.demowebshop.interfaces.CheckoutUI;
 import com.vmo.demowebshop.pageobject.*;
 import com.vmo.demowebshop.utils.DataUtils;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -102,5 +103,11 @@ public class BuyItemSuccessfully extends BaseTest {
         verifyTrue(homepageObject.isCorrectHomepage());
         Log.allure("Verifed in homepage screen.");
 
+    }
+
+    @AfterClass
+    public void teardown() {
+        cleanBrowserAndDriver();
+        Log.info("Close driver");
     }
 }
