@@ -21,7 +21,7 @@ public class LoginFromFileTest extends BaseTest {
     public void setup(String browser) throws IOException {
         driver = getDriverBrower(browser);
         Log.allure("Read data from file.");
-        ExcelUtils.setExcelFileSheet("Test data (2)");
+        ExcelUtils.setExcelFileSheet("Test data");
     }
 
     @Test(dataProvider = "readFile")
