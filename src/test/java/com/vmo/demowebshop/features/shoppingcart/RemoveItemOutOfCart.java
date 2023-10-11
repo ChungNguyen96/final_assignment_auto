@@ -4,7 +4,7 @@ import com.vmo.demowebshop.common.BaseTest;
 import com.vmo.demowebshop.helper.Log;
 import com.vmo.demowebshop.pageobject.HomepageObject;
 import com.vmo.demowebshop.pageobject.PageGenerator;
-import com.vmo.demowebshop.pageobject.ProductDetailObject;
+
 import com.vmo.demowebshop.pageobject.ShoppingCartObject;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -15,7 +15,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import java.util.Locale;
+
 @Epic("Demo webshop")
 @Feature("Shopping")
 @Story("Remove item out of cart")
@@ -23,7 +23,6 @@ import java.util.Locale;
 public class RemoveItemOutOfCart extends BaseTest {
     private WebDriver driver;
     private HomepageObject homepageObject;
-    private ProductDetailObject productDetailObject;
     private ShoppingCartObject shoppingCartObject;
 
 

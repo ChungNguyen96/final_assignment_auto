@@ -43,18 +43,18 @@ public class HomepageObject extends BasePage {
     }
 
     public boolean isCorrectHomepage() {
+
         return getCurrentUrl(driver).equals(HomepageUI.URL);
     }
 
 
     public void clickBookTag() {
+        waitForElementVisible(driver,HomepageUI.BOOK_MENU);
         clickToElement(driver, HomepageUI.BOOK_MENU);
         Log.allure("Click menu: Book.");
     }
 
     public int getQuantityDisplayIncart() {
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, ListBookPageUI.CART_QUANTITY));
         waitForElementVisible(driver,ListBookPageUI.CART_QUANTITY);
         String quantity = getWebElement(driver, ListBookPageUI.CART_QUANTITY).getText();
         return Integer.parseInt(quantity.substring(quantity.indexOf("(") + 1, quantity.indexOf(")")));

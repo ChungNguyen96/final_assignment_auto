@@ -19,10 +19,6 @@ public class ShoppingCartObject extends BasePage {
         return isElementDisplay(driver, ShoppingCartUI.TITLE_PAGE);
     }
 
-    public void selectCountry(String country) {
-        selectItemInDefaultDropdownByText(driver,ShoppingCartUI.SELECT_COUNTRY,country);
-    }
-
     public void clickTermService() {
         clickToElement(driver,ShoppingCartUI.CHECKBOX_TERM_SERVICE);
     }
@@ -40,6 +36,7 @@ public class ShoppingCartObject extends BasePage {
         quantity = Integer.parseInt(quantityElement.substring(quantityElement.indexOf("(") + 1, quantityElement.indexOf(")")));
     }
     public void clickCheckOut() {
+        waitForElementVisible(driver,ShoppingCartUI.BTN_CHECKOUT);
         clickToElement(driver,ShoppingCartUI.BTN_CHECKOUT);
     }
 
@@ -52,14 +49,14 @@ public class ShoppingCartObject extends BasePage {
         else  return false;
     }
     public int getQuantityDisplayIncart() {
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, ListBookPageUI.CART_QUANTITY));
+
         waitForElementVisible(driver, ListBookPageUI.CART_QUANTITY);
         String quantity = getWebElement(driver, ListBookPageUI.CART_QUANTITY).getText();
         return Integer.parseInt(quantity.substring(quantity.indexOf("(") + 1, quantity.indexOf(")")));
     }
 
     public void clickCheckoutAsGuest() {
+        waitForElementVisible(driver,ShoppingCartUI.BTN_CHECKOUT_AS_GUEST);
         clickToElement(driver,ShoppingCartUI.BTN_CHECKOUT_AS_GUEST);
     }
 

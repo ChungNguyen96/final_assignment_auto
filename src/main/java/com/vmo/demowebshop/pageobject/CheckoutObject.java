@@ -25,8 +25,6 @@ public class CheckoutObject extends BasePage {
     }
 
     public void selectData(String fieldName, String country) {
-        System.out.println(getWebElement(driver, CheckoutUI.SELECT_DYNAMIC, fieldName));
-
         selectItemInDefaultDropdownByText(driver, CheckoutUI.SELECT_DYNAMIC, country, fieldName);
         Log.allure("Select country");
     }
