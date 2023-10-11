@@ -19,17 +19,17 @@ public class TestNGListener implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         System.out.println("--------Test success");
-  //      Object testClass = result.getInstance();
-//        WebDriver webDriver = ((BaseTest) testClass).getDriver();
-//        saveScreenShot(webDriver);
+        Object testClass = result.getInstance();
+        WebDriver webDriver = ((BaseTest) testClass).getDriver();
+        saveScreenShot(webDriver);
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
         Log.info("---------- " + result.getName() + " FAILED test ----------");
-//        Object testClass = result.getInstance();
-//        WebDriver webDriver = ((BaseTest) testClass).getDriver();
-//        saveScreenShot(webDriver);
+        Object testClass = result.getInstance();
+        WebDriver webDriver = ((BaseTest) testClass).getDriver();
+        saveScreenShot(webDriver);
     }
     @Attachment()
     public  static byte[] saveScreenShot(WebDriver driver){
