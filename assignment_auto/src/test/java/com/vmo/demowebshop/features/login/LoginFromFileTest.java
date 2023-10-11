@@ -6,15 +6,23 @@ import com.vmo.demowebshop.pageobject.HomepageObject;
 import com.vmo.demowebshop.pageobject.LoginPageObject;
 import com.vmo.demowebshop.pageobject.PageGenerator;
 import com.vmo.demowebshop.utils.ExcelUtils;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
 import java.io.IOException;
 
+@Epic("Demo webshop")
+@Feature("Authen")
+@Story("Login with data file")
+
 public class LoginFromFileTest extends BaseTest {
     private WebDriver driver;
     private LoginPageObject loginPageObject;
     private HomepageObject homepageObject;
+
 
     @BeforeClass
     @Parameters({"browser"})

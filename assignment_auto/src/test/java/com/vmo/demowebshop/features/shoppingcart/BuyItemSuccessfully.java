@@ -5,12 +5,18 @@ import com.vmo.demowebshop.helper.Log;
 import com.vmo.demowebshop.interfaces.CheckoutUI;
 import com.vmo.demowebshop.pageobject.*;
 import com.vmo.demowebshop.utils.DataUtils;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+@Epic("Demo webshop")
+@Feature("Shopping")
+@Story("Buy item successfully")
 public class BuyItemSuccessfully extends BaseTest {
     private WebDriver driver;
     private HomepageObject homepageObject;

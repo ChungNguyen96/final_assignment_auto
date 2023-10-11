@@ -6,6 +6,9 @@ import com.vmo.demowebshop.pageobject.HomepageObject;
 import com.vmo.demowebshop.pageobject.ListBookPageObject;
 import com.vmo.demowebshop.pageobject.PageGenerator;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.openqa.selenium.WebDriver;
 
 import org.testng.annotations.AfterClass;
@@ -15,6 +18,9 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+@Epic("Demo webshop")
+@Feature("Shopping")
+@Story("Buy two book highest rate")
 
 public class BuyBookHighestRated extends BaseTest {
     private WebDriver driver;
