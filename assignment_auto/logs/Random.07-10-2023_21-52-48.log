@@ -1,4 +1,0 @@
-[07-10-2023 21:52:53.909 INFO com.vmo.demowebshop.helper.Log] - Enter URL
-[07-10-2023 21:54:05.803 INFO com.vmo.demowebshop.helper.Log] - Click book: Computing and Internet
-[07-10-2023 21:54:20.164 INFO com.vmo.demowebshop.helper.Log] - Verify increase quantity.
-[07-10-2023 21:54:25.190 INFO com.vmo.demowebshop.helper.Log] - Click book: Health Book
